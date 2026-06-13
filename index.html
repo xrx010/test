@@ -13,12 +13,16 @@
             <h1>🐱 Cats of Destiny</h1>
             <div class="header-stats">
                 <div class="stat">
-                    <span class="label">Moedas:</span>
+                    <span class="label">💰 Moedas:</span>
                     <span class="value" id="coins">0</span>
                 </div>
                 <div class="stat">
-                    <span class="label">Nível:</span>
+                    <span class="label">⭐ Nível:</span>
                     <span class="value" id="level">1</span>
+                </div>
+                <div class="stat">
+                    <span class="label">🐱 Heróis:</span>
+                    <span class="value" id="heroCount">1</span>
                 </div>
             </div>
         </header>
@@ -29,24 +33,25 @@
             <section class="hero-section">
                 <div class="hero-card">
                     <div class="hero-visual">
-                        <svg id="heroSvg" width="150" height="150" viewBox="0 0 150 150">
+                        <svg id="heroSvg" width="200" height="200" viewBox="0 0 200 200">
                             <!-- Hero SVG renderizado dinamicamente -->
                         </svg>
                     </div>
                     <div class="hero-info">
                         <h2 id="heroName">Gatinho Aventureiro</h2>
+                        <p id="heroClass" class="hero-class">Aventureiro</p>
                         <div class="stat-bar">
-                            <label>Ataque:</label>
+                            <label>⚔️ Ataque:</label>
                             <progress id="attackBar" value="10" max="100"></progress>
                             <span id="attackValue">10</span>
                         </div>
                         <div class="stat-bar">
-                            <label>Defesa:</label>
+                            <label>🛡️ Defesa:</label>
                             <progress id="defenseBar" value="5" max="100"></progress>
                             <span id="defenseValue">5</span>
                         </div>
                         <div class="stat-bar">
-                            <label>Velocidade:</label>
+                            <label>⚡ Velocidade:</label>
                             <progress id="speedBar" value="8" max="100"></progress>
                             <span id="speedValue">8</span>
                         </div>
@@ -56,17 +61,20 @@
                 <!-- Action Buttons -->
                 <div class="action-buttons">
                     <button class="btn btn-primary" id="attackBtn">
-                        ⚔️ Atacar
+                        ⚔️ Atacar Inimigo
                     </button>
                     <button class="btn btn-secondary" id="collectBtn">
                         💰 Coletar Moedas
+                    </button>
+                    <button class="btn btn-info" id="restBtn">
+                        😴 Descansar
                     </button>
                 </div>
             </section>
 
             <!-- Team Section -->
             <section class="team-section">
-                <h3>👥 Seu Time</h3>
+                <h3>👥 Seu Time de Heróis Felinos</h3>
                 <div class="team-grid" id="teamGrid">
                     <!-- Heróis renderizados aqui -->
                 </div>
@@ -77,26 +85,56 @@
 
             <!-- Mascots Section -->
             <section class="mascots-section">
-                <h3>🐾 Mascotes (Companheiros)</h3>
+                <h3>🐾 Mascotes Fofos (Companheiros)</h3>
                 <div class="mascots-grid" id="mascotsGrid">
                     <!-- Mascotes renderizados aqui -->
                 </div>
                 <button class="btn btn-tertiary" id="adoptBtn">
-                    ❤️ Adotar Mascote
+                    ❤️ Adotar Mascote Fofo
                 </button>
             </section>
 
             <!-- Upgrades Section -->
             <section class="upgrades-section">
-                <h3>⚡ Melhorias</h3>
+                <h3>⚡ Melhorias & Evolução</h3>
                 <div class="upgrades-grid" id="upgradesGrid">
                     <!-- Upgrades renderizados aqui -->
                 </div>
             </section>
+
+            <!-- Achievements Section -->
+            <section class="achievements-section">
+                <h3>🏆 Conquistas</h3>
+                <div class="achievements-grid" id="achievementsGrid">
+                    <!-- Achievements renderizados aqui -->
+                </div>
+            </section>
         </main>
+
+        <!-- Modals -->
+        <div class="modal" id="recruitModal">
+            <div class="modal-content">
+                <span class="close" id="closeRecruit">&times;</span>
+                <h2>🐱 Recrutar Novo Herói Felino</h2>
+                <div class="heroes-list" id="heroesListRecruit">
+                    <!-- Lista de heróis renderizada aqui -->
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="adoptModal">
+            <div class="modal-content">
+                <span class="close" id="closeAdopt">&times;</span>
+                <h2>🐾 Adotar Mascote Fofo</h2>
+                <div class="mascots-list" id="mascotsListAdopt">
+                    <!-- Lista de mascotes renderizada aqui -->
+                </div>
+            </div>
+        </div>
 
         <!-- Notification Area -->
         <div class="notification" id="notification"></div>
+        <div class="celebration" id="celebration"></div>
     </div>
 
     <script src="game.js"></script>

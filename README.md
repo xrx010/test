@@ -125,7 +125,7 @@ CatsOfDestiny
 
 - [ ] Sistema de Combate com Inimigos
 - [ ] Boss Battles épicas
-- [ ] Equitamentos e Itens
+- [ ] Equipamentos e Itens
 - [ ] Modo Multijogador
 - [ ] Ranking Global
 - [ ] Skins e Cosméticos
