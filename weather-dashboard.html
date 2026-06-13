@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ Weather Dashboard - Previsão do Tempo</title>
+    <link rel="stylesheet" href="weather-style.css">
+</head>
+<body>
+    <div class="weather-container">
+        <!-- Header -->
+        <header class="weather-header">
+            <div class="header-content">
+                <h1>🌤️ Weather Dashboard</h1>
+                <p class="subtitle">Previsão do Tempo em Tempo Real</p>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="🔍 Digite o nome da cidade..."
+                    class="search-input"
+                >
+                <button class="search-btn" id="searchBtn">Buscar</button>
+                <button class="location-btn" id="locationBtn" title="Usar localização atual">📍 Localização</button>
+            </div>
+            <div class="suggestions" id="suggestions"></div>
+        </section>
+
+        <!-- Current Weather Section -->
+        <section class="current-weather" id="currentWeather" style="display: none;">
+            <div class="weather-main">
+                <div class="weather-visual">
+                    <img id="weatherIcon" src="" alt="Condição do tempo" class="weather-icon">
+                    <div class="temperature-display">
+                        <span id="temperature" class="temp">--°C</span>
+                        <span id="weatherDescription" class="description">--</span>
+                    </div>
+                </div>
+                
+                <div class="location-info">
+                    <h2 id="cityName">--</h2>
+                    <p id="locationDetails">--</p>
+                    <p id="updateTime" class="update-time">--</p>
+                </div>
+            </div>
+
+            <!-- Details Grid -->
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">💨</div>
+                    <div class="detail-content">
+                        <p class="detail-label">Vento</p>
+                        <p class="detail-value" id="windSpeed">-- km/h</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">💧</div>
+                    <div class="detail-content">
+                        <p class="detail-label">Umidade</p>
+                        <p class="detail-value" id="humidity">--%</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">🌡️</div>
+                    <div class="detail-content">
+                        <p class="detail-label">Sensação</p>
+                        <p class="detail-value" id="feelsLike">--°C</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">🌅</div>
+                    <div class="detail-content">
+                        <p class="detail-label">Nascer do Sol</p>
+                        <p class="detail-value" id="sunrise">--:--</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">🌇</div>
+                    <div class="detail-content">
+                        <p class="detail-label">Pôr do Sol</p>
+                        <p class="detail-value" id="sunset">--:--</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">🌪️</div>
+                    <div class="detail-content">
+                        <p class="detail-label">Pressão</p>
+                        <p class="detail-value" id="pressure">-- mb</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">👁️</div>
+                    <div class="detail-content">
+                        <p class="detail-label">Visibilidade</p>
+                        <p class="detail-value" id="visibility">-- km</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">☁️</div>
+                    <div class="detail-content">
+                        <p class="detail-label">Nebulosidade</p>
+                        <p class="detail-value" id="cloudiness">--%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5-Day Forecast Section -->
+        <section class="forecast-section" id="forecastSection" style="display: none;">
+            <h3>📅 Previsão de 5 Dias</h3>
+            <div class="forecast-grid" id="forecastGrid">
+                <!-- Cards de previsão renderizados aqui -->
+            </div>
+        </section>
+
+        <!-- Hourly Forecast Section -->
+        <section class="hourly-section" id="hourlySection" style="display: none;">
+            <h3>⏰ Previsão por Hora</h3>
+            <div class="hourly-grid" id="hourlyGrid">
+                <!-- Cards de previsão por hora renderizados aqui -->
+            </div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section class="favorites-section" id="favoritesSection">
+            <h3>⭐ Cidades Favoritas</h3>
+            <div class="favorites-grid" id="favoritesGrid">
+                <!-- Cidades favoritas renderizadas aqui -->
+            </div>
+            <p class="favorites-empty" id="favoritesEmpty">Nenhuma cidade favorita ainda. Adicione uma!</p>
+        </section>
+
+        <!-- Error Section -->
+        <section class="error-section" id="errorSection" style="display: none;">
+            <div class="error-card">
+                <span class="error-icon">⚠️</span>
+                <p id="errorMessage">Ocorreu um erro ao buscar os dados</p>
+                <button class="retry-btn" id="retryBtn">Tentar Novamente</button>
+            </div>
+        </section>
+
+        <!-- Loading Spinner -->
+        <div class="loading" id="loadingSpinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Carregando dados...</p>
+        </div>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
