@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 Cats of Destiny - Idle RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🐱 Cats of Destiny</h1>
+            <div class="header-stats">
+                <div class="stat">
+                    <span class="label">Moedas:</span>
+                    <span class="value" id="coins">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Nível:</span>
+                    <span class="value" id="level">1</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="main-game">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-card">
+                    <div class="hero-visual">
+                        <svg id="heroSvg" width="150" height="150" viewBox="0 0 150 150">
+                            <!-- Hero SVG renderizado dinamicamente -->
+                        </svg>
+                    </div>
+                    <div class="hero-info">
+                        <h2 id="heroName">Gatinho Aventureiro</h2>
+                        <div class="stat-bar">
+                            <label>Ataque:</label>
+                            <progress id="attackBar" value="10" max="100"></progress>
+                            <span id="attackValue">10</span>
+                        </div>
+                        <div class="stat-bar">
+                            <label>Defesa:</label>
+                            <progress id="defenseBar" value="5" max="100"></progress>
+                            <span id="defenseValue">5</span>
+                        </div>
+                        <div class="stat-bar">
+                            <label>Velocidade:</label>
+                            <progress id="speedBar" value="8" max="100"></progress>
+                            <span id="speedValue">8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="attackBtn">
+                        ⚔️ Atacar
+                    </button>
+                    <button class="btn btn-secondary" id="collectBtn">
+                        💰 Coletar Moedas
+                    </button>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="team-section">
+                <h3>👥 Seu Time</h3>
+                <div class="team-grid" id="teamGrid">
+                    <!-- Heróis renderizados aqui -->
+                </div>
+                <button class="btn btn-tertiary" id="recruitBtn">
+                    ➕ Recrutar Novo Herói
+                </button>
+            </section>
+
+            <!-- Mascots Section -->
+            <section class="mascots-section">
+                <h3>🐾 Mascotes (Companheiros)</h3>
+                <div class="mascots-grid" id="mascotsGrid">
+                    <!-- Mascotes renderizados aqui -->
+                </div>
+                <button class="btn btn-tertiary" id="adoptBtn">
+                    ❤️ Adotar Mascote
+                </button>
+            </section>
+
+            <!-- Upgrades Section -->
+            <section class="upgrades-section">
+                <h3>⚡ Melhorias</h3>
+                <div class="upgrades-grid" id="upgradesGrid">
+                    <!-- Upgrades renderizados aqui -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Notification Area -->
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
